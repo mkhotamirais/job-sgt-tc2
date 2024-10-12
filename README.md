@@ -1,4 +1,4 @@
-# My Next.js Project with TypeScript and Ant Design
+# My Next.js Project with TypeScript and ScrollMagic
 
 This project is a Next.js application built with TypeScript and ScrollMagic for animation. Follow the steps below to set up and run the project.
 
