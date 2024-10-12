@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+:root {
+  height: 100%;
+  font-family: DM Sans, sans-serif;
+}
+
+h1 {
+  font-size: 4.5vw;
+}
+
+h2 {
+  @apply text-[4vw] font-bold;
+}
+
+h3 {
+  @apply text-[3vw] lg:text-[1.6vw] font-medium;
+}
+
+p {
+  font-size: 2.5vw;
+}
+
+p.card {
+  @apply text-[2.5vw] lg:text-[1.3vw];
+}
+
+.container {
+  @apply p-[10vw] space-y-4 w-full;
+}
+
+.box {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease-out;
+}
+
+.box.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --ping: #ff97d0;
+  --kuning: #fcf944;
+  --biru: #3e88ff;
+  --ijo: #31be32;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
