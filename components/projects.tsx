@@ -1,6 +1,8 @@
 "use client";
 
-// import { projectList } from "@/lib/lists";
+import ScrollMagic from "scrollmagic";
+import { useEffect } from "react";
+
 const projectList = [
   {
     title: "Emergency Aid. WAR 2022.",
@@ -21,8 +23,26 @@ const projectList = [
 ];
 
 export default function Projects() {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const controller = new ScrollMagic.Controller();
+
+      const revealElements = document.getElementsByClassName("project");
+
+      for (let i = 0; i < revealElements.length; i++) {
+        new ScrollMagic.Scene({
+          triggerElement: revealElements[i],
+          offset: 50,
+          triggerHook: 0.9,
+        })
+          .setClassToggle(revealElements[i], "visible")
+          .addTo(controller);
+      }
+    }
+  }, []);
+
   return (
-    <section className="bg-biru *:text-white">
+    <section id="projects" className="bg-biru *:text-white">
       <div className="container">
         <div>
           <h2>Our projects</h2>
@@ -30,7 +50,7 @@ export default function Projects() {
         </div>
         <div className="flex flex-col justify-center space-y-7 pt-2 w-full">
           {projectList.map((item, i) => (
-            <div key={i} className={`relative w-full`}>
+            <div key={i} className={`project relative w-full`}>
               <div className={`absolute ${item.latar} inset-0`} />
               <div className="relative z-10 border-[4px] p-10 bg-inherit hover:-translate-y-3 hover:translate-x-3 transition ease-linear">
                 <h2>{item.title}</h2>

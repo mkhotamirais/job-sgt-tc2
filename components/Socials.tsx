@@ -7,7 +7,7 @@ const socialsIcon = [FaYoutube, FaInstagram, FaFacebookF, FaPatreon, FaTelegramP
 
 export default function Socials() {
   return (
-    <div className="flex gap-4">
+    <div id="socials" className="flex gap-4">
       {socialsIcon.map((Icon, i) => (
         <Link href="#" key={i}>
           <Icon className="text-[3vw]" />

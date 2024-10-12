@@ -1,0 +1,32 @@
+#hero h1,
+#hero p,
+#hero #socials,
+#hero #gambar {
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+#hero h1 {
+  transform: translateX(40px);
+}
+
+#hero p {
+  transform: translateY(40px);
+}
+
+#hero #socials {
+  transform: translateY(40px);
+  transition: all 0.3s ease-in-out;
+}
+
+#hero #gambar {
+  transform: translateY(-40px);
+}
+
+#hero h1.visible,
+#hero p.visible,
+#hero #socials.visible,
+#hero #gambar.visible {
+  opacity: 1;
+  transform: none;
+}

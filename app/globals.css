@@ -73,3 +73,46 @@ body {
     text-wrap: balance;
   }
 }
+
+/* about scroll */
+#about #yt {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.5s ease-in-out;
+}
+
+/* project scroll */
+#projects .project {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.5s ease-in-out;
+}
+
+/* help scroll */
+#help .bantu,
+#team .tim,
+#citizens .citizen,
+#partners .partner,
+#contact #last-image {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.5s ease-in-out;
+}
+
+#help #btn-bantu {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.5s ease-in-out;
+}
+
+#help .bantu.visible,
+#help #btn-bantu.visible,
+#projects .project.visible,
+#about #yt.visible,
+#team .tim.visible,
+#citizens .citizen.visible,
+#partners .partner.visible,
+#contact #last-image.visible {
+  opacity: 1;
+  transform: none;
+}

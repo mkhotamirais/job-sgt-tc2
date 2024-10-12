@@ -1,6 +1,24 @@
+"use client";
+
+import { useEffect } from "react";
+import ScrollMagic from "scrollmagic";
+
 export default function About() {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const controller = new ScrollMagic.Controller();
+      const scene = new ScrollMagic.Scene({
+        triggerElement: "#about #yt",
+        triggerHook: 0.9,
+        duration: "125%",
+        offset: 50,
+      });
+      scene.setClassToggle("#about #yt", "visible");
+      controller.addScene(scene);
+    }
+  }, []);
   return (
-    <section className="min-h-screen">
+    <section id="about" className="min-h-screen">
       <div className="container">
         <div>
           <h2>We Are</h2>
@@ -19,14 +37,20 @@ export default function About() {
             with us throughout our lives. We all know the healing power of warmth, grace, and big loving eyes.
           </p>
         </div>
-        <blockquote className="border-l-4 border-pink-300 p-[3vw] ml-[4vw] text-[2.8vw]">
+        <blockquote className="border-l-4 border-pink-300 p-[3vw] ml-[4vw] text-[2.8vw] italic">
           &quot;Animals need to have friends. Just like humans.&quot;
           <br />- James Herriot, All Creatures Great and Small
         </blockquote>
         <p>
           Who else if not we should support our younger brothers, especially in difficult times? Let&apos;s be friends!
         </p>
-        <div className="border w-full aspect-[16/9]">box</div>
+        <div id="yt" className="border w-full aspect-[16/9]">
+          <video width="100%" height="100%" controls preload="none">
+            <source src="https://www.youtube.com/watch?v=5Wk1rp99B7o&feature=youtu.be" type="video/mp4" />
+            <track src="/path/to/captions.vtt" kind="subtitles" srcLang="en" label="English" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
     </section>
   );
