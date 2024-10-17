@@ -1,6 +1,6 @@
 # My Next.js Project with TypeScript and ScrollMagic
 
-This project was created to fulfill the as signment from Company Summit Global Technology. This project is a Next.js application built with TypeScript and ScrollMagic for animation. Follow the steps below to set up and run the project.
+This project was created to fulfill the as signment from Company Summit Global Technology as a Junior Front End Engineer. This project is a Next.js application built with TypeScript and ScrollMagic for animation. Follow the steps below to set up and run the project.
 
 
 ## Prerequisite
